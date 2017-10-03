@@ -25,9 +25,14 @@ os_info = "0.1.0"
 ```rust
 extern crate os_info;
 
-let os = os_info::current_platform();
-println!("Type: {:?}", os.os_type);
-println!("Version: {}", os.version);
+let os = os_info::get();
+
+// Print full information:
+println!("OS information: {}", info);
+
+// Print information separately:
+println!("Type: {}", info.os_type());
+println!("Version: {}", info.version());
 ```
 
 Right now, the following operating system types can be returned:
